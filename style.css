@@ -6,7 +6,17 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
 .navbar{
+    animation: 1s ease-out 0s 1 slideInFromLeft;
     text-align: center;
     padding: 0;
 }
