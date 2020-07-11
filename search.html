@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Agustin-Mariscotti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="api-vue">
+        <div class="container">
+            <h1>This is my github pages website</h1>
+            <hr>
+            <nav class="row navbar">
+                <div class="col-sm"><a href="https://twitter.com/AgusMariss">Twitter</a></div>
+                <div class="col-sm"><a href="https://github.com/AgusMaris">Git</a></div>
+                <div class="col-sm"><a href="/404.html">Search Anime</a></div>
+            </nav>
+        </div>
+        <hr>
+        <form class="form-row">
+            <div class="col-sm-3 ml-3 mb-3">
+                <input type="text" class="form-control" v-model="searchInput">
+            </div>
+            <div class="col-sm">
+                <input type="button" value="Buscar" class="btn btn-outline-primary" v-on:click="searchAnimes">
+            </div>
+        </form>
+        
+        <div v-for="anime in arraySearch">
+            <h3 class="mx-4 mt-4">{{anime.title.romaji}}</h3>
+            <img v-bind:src="anime.coverImage.large" alt="animePic" class="mx-5 my-3">
+            <p class="mx-5"><strong>Description: </strong><span class="font-italic">{{anime.description}}</span></p>
+            <p class="mx-5"><strong>Sore: </strong>{{anime.averageScore}}</p>
+            <p class="mx-5"><strong>Source: </strong>{{anime.source}}</p>
+            <p class="mx-5"><strong>Episodes: </strong>{{anime.episodes}}</p>
+            <p class="mx-5"><strong>Genres: </strong>
+                <span v-for="genre in anime.genres" class="mx-1">
+                    {{genre.name || genre}};
+                </span>
+            </p>
+            <hr>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
