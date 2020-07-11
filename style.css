@@ -2,4 +2,23 @@ body{
     background-image: linear-gradient( 109.5deg,  rgba(76,221,242,1) 11.2%, rgba(92,121,255,1) 91.1% );
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbar{
+    text-align: center;
+    padding: 0;
+}
+
+a{
+    color: white;
+    transition-duration: 0.45s;
+}
+a:hover{
+    text-decoration: none;
+}
+
+h1{
+    text-align: center;
 }
